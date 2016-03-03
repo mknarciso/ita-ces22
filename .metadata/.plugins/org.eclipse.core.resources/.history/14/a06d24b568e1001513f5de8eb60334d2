@@ -7,10 +7,10 @@ public class Shape {
 	public float calculateArea() { return 0.0f; }
 	
 	public static void main(String []args) throws Exception {
+		System.out.println("hi");
 		Circle c = new Circle("Circle C",3);
 		Square s = new Square("Square S",4);
-		Triangle t = new Triangle("Triangle T",3,4);
-		Shape shapeArray[] = {c,s,t};
+		Shape shapeArray[] = {c,s};
 		for (int i=0;i<shapeArray.length; i++){
 			System.out.println("The area of " + shapeArray[i].getName() + " is " + 
 								shapeArray[i].calculateArea() + " sq. cm.\n");
@@ -42,17 +42,5 @@ class Square extends Shape{
 		int area;
 		area = side * side;
 		return area;
-	}
-}
-
-class Triangle extends Shape {
-	private int base, high;
-	Triangle (String aName, int b, int h){
-		super(aName);
-		base = b;
-		high = h;
-	}
-	public float calculateArea(){
-		return (base*high)/2;
 	}
 }
