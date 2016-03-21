@@ -32,7 +32,5 @@ public class time {
 		t.printTime();
 		t.setTime(22, 35);
 		t.printTime();
-		t.setTime(05, 17);
-		t.printTime();
 	}
 }
