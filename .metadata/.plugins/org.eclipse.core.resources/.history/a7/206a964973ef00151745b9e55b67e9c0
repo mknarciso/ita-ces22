@@ -6,9 +6,11 @@ public class time {
 	time() {};
 	public void setHour(int h){
 		hour = h;
+		System.out.println("Hour set to: "+hour);
 	}
 	public void setMinute(int m){
 		minute = m;
+		System.out.println("Minute set to: "+minute);
 	}
 	public int getHour(){
 		return hour;
@@ -19,9 +21,7 @@ public class time {
 	public void setTime(int h, int m){
 		hour = h;
 		minute = m;
-	}
-	public void printTime(){
-		System.out.println("The time now is "+hour+":"+minute);
+		System.out.println("Time set to: "+hour+":"+minute);
 	}
 	public static void main(String arg[]){
 		time t = new time();
@@ -29,8 +29,7 @@ public class time {
 		//t.minute = 25;
 		t.setHour(3);
 		t.setMinute(25);
-		t.printTime();
+		System.out.println("The time now is "+t.getHour()+":"+t.getMinute());
 		t.setTime(22, 35);
-		t.printTime();
 	}
 }

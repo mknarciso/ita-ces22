@@ -20,8 +20,8 @@ public class time {
 		hour = h;
 		minute = m;
 	}
-	public void printTime(){
-		System.out.println("The time now is "+hour+":"+minute);
+	public void prettyTime(){
+		System.out.println("The time now is "+hour+":"+t.minute);
 	}
 	public static void main(String arg[]){
 		time t = new time();
@@ -29,8 +29,8 @@ public class time {
 		//t.minute = 25;
 		t.setHour(3);
 		t.setMinute(25);
-		t.printTime();
+		t.prettyTime();
 		t.setTime(22, 35);
-		t.printTime();
+		t.prettyTime();
 	}
 }
