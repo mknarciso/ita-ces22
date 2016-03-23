@@ -29,14 +29,8 @@ class CalculatorInput{
 		}
 	}
 	public static void main(String []args) throws Exception{
-		try {
 		CalculatorEngine e = new CalculatorEngine();
 		CalculatorInput x = new CalculatorInput(e);
 		x.run();
-		}catch (Exception e) 
-		{
-			System.out.println(e.getMessage()); 
-		} 
-		System.out.println("Division attempt done");
 	}
 }

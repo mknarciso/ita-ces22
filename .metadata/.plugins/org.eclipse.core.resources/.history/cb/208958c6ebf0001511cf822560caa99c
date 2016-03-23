@@ -9,10 +9,10 @@ class CalculatorEngine {
 		value = 0;
 		toDo = op;
 	}
-	void add() throws Exception { binaryOperation('+');}
-	void subtract() throws Exception { binaryOperation('-');}
-	void multiply() throws Exception { binaryOperation('*');}
-	void divide() throws Exception { binaryOperation('/');}
+	void add(){ binaryOperation('+');}
+	void subtract(){ binaryOperation('-');}
+	void multiply(){ binaryOperation('*');}
+	void divide(){ binaryOperation('/');}
 	void compute() throws Exception {
 		if (toDo == '+')
 			value = keep + value;
