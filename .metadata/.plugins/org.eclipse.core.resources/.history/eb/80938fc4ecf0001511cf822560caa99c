@@ -38,6 +38,6 @@ class CalculatorInput{
 		{
 			System.out.println(e.getMessage()); 
 		} 
-		System.out.println("Please restart the program");
+		System.out.println("Attempt done");
 	}
 }
