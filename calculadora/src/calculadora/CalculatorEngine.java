@@ -4,8 +4,7 @@ class CalculatorEngine {
 	int value;
 	int keep;
 	char toDo;
-	void binaryOperation(char op){
-		
+	void binaryOperation(char op) throws Exception {
 		keep = value;
 		value = 0;
 		toDo = op;
@@ -14,15 +13,18 @@ class CalculatorEngine {
 	void subtract(){ binaryOperation('-');}
 	void multiply(){ binaryOperation('*');}
 	void divide(){ binaryOperation('/');}
-	void compute(){
+	void compute() throws Exception {
 		if (toDo == '+')
 			value = keep + value;
 		else if (toDo == '-')
 			value = keep - value;
 		else if (toDo == '*')
 			value = keep * value;
-		else if (toDo == '/')
+		else if (toDo == '/'){
+			if (value==0)
+				throw new Exception("Can not divide by zero!");
 			value = keep / value;
+		}
 		keep = 0;
 	}
 	void clear(){

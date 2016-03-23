@@ -3,11 +3,12 @@ package calculadora;
 class CalculatorEngine {
 	int value;
 	int keep;
+	char toDo;
 	void binaryOperation(char op){
 		
 		keep = value;
 		value = 0;
-		char toDo = op;
+		toDo = op;
 	}
 	void add(){ binaryOperation('+');}
 	void subtract(){ binaryOperation('-');}
