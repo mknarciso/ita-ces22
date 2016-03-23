@@ -16,7 +16,6 @@ class CalculatorInput{
 			System.out.print("[" + engine.display() + "]");
 			String m = stream.readLine();
 			System.out.println(m);
-			if (m==null) break;
 			while (m.length() > 0){
 				char c = m.charAt(0);
 				if (c == '+') engine.add();
@@ -30,6 +29,7 @@ class CalculatorInput{
 				m = m.substring(1);
 				System.out.println(m);
 			}
+			break;
 		}
 	}
 	public static void main(String []args) throws Exception{

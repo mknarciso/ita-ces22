@@ -15,9 +15,8 @@ class CalculatorInput{
 		for(;;){
 			System.out.print("[" + engine.display() + "]");
 			String m = stream.readLine();
-			System.out.println(m);
 			if (m==null) break;
-			while (m.length() > 0){
+			if (m.length() > 0){
 				char c = m.charAt(0);
 				if (c == '+') engine.add();
 				else if (c == '-') engine.subtract();
@@ -27,8 +26,6 @@ class CalculatorInput{
 				else if (c == '=') engine.compute();
 				else if (c == 'c' || c == 'C') engine.clear();
 				else throw new Exception("Unknow operation!");
-				m = m.substring(1);
-				System.out.println(m);
 			}
 		}
 	}

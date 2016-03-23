@@ -17,7 +17,7 @@ class CalculatorInput{
 			String m = stream.readLine();
 			System.out.println(m);
 			if (m==null) break;
-			while (m.length() > 0){
+			if (m.length() > 0){
 				char c = m.charAt(0);
 				if (c == '+') engine.add();
 				else if (c == '-') engine.subtract();
