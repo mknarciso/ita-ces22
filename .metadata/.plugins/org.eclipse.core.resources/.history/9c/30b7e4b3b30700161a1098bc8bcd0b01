@@ -43,14 +43,12 @@ class Buffer {
 	 
 
 	 public static void main(String args[]) {
-		 Buffer b = new Buffer();
-		 Writer w = new Writer("entrada.txt",b);
-		 Reader r = new Reader(b);
+		 Buffer b;
+		 Writer w = new Writer("teste",b);
 		 w.run();
+		 Reader r = new Reader(b);
 		 r.run();
-		 r.run();
-		 Writer t = new Writer("entrada.txt",b);
-		 t.run();
+		 
 	 }
 	 
 } 

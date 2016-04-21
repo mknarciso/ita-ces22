@@ -48,9 +48,6 @@ class Buffer {
 		 Reader r = new Reader(b);
 		 w.run();
 		 r.run();
-		 r.run();
-		 Writer t = new Writer("entrada.txt",b);
-		 t.run();
 	 }
 	 
 } 

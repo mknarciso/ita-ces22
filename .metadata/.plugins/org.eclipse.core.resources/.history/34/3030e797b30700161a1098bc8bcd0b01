@@ -40,17 +40,4 @@ class Buffer {
 		 count = 0;
 		 front = rear = 0;
 	 }
-	 
-
-	 public static void main(String args[]) {
-		 Buffer b = new Buffer();
-		 Writer w = new Writer("entrada.txt",b);
-		 Reader r = new Reader(b);
-		 w.run();
-		 r.run();
-		 r.run();
-		 Writer t = new Writer("entrada.txt",b);
-		 t.run();
-	 }
-	 
 } 
