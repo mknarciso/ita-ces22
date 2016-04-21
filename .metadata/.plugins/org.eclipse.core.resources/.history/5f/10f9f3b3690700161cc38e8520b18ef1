@@ -8,12 +8,7 @@ class Buffer {
 	 
 	 public synchronized char get() {
 		 while (count == 0)
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			 wait();
 		 char x = keep[rear];
 		 rear = (rear+1) % MAXSIZE;
 		 count--;
@@ -23,12 +18,7 @@ class Buffer {
 	 
 	 public synchronized void put(char x) {
 		 while (count == MAXSIZE)
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			 wait();
 		 keep[front] = x;
 		 front = (front+1) % MAXSIZE;
 		 count++;
@@ -36,7 +26,7 @@ class Buffer {
 	 }
 	 
 	 Buffer() {
-		 keep = new char [MAXSIZE];
+		 keep[] = new char [MAXSIZE];
 		 count = 0;
 		 front = rear = 0;
 	 }
