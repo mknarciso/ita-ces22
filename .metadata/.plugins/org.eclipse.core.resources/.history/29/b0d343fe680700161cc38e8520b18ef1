@@ -1,7 +1,5 @@
 package ex6Consumer;
 
-import java.io.FileInputStream;
-
 class Writer extends Thread {
 	 Buffer b;
 	 FileInputStream fs;
