@@ -7,10 +7,14 @@ class Writer extends Thread {
 	 FileInputStream fs;
 	 public void run() {
 		 int x;
+		 String output = "Um produtor("+this.getName()+") disponinbilizou um novo inventário: ";
 		 try {
-			 while ((x = fs.read()) != -1)
+			 while ((x = fs.read()) != -1){
+				 output += (char) x;
 				 b.put((char) x);
-			 b.put('\032');
+			 }
+			 output += ' ';
+			 System.out.println(output);
 		 } catch (Exception e) {
 			 System.err.println("Cannot read");
 			 System.exit(1);
@@ -21,6 +25,7 @@ class Writer extends Thread {
 		 this.b = b;
 		 try {
 			 fs = new FileInputStream(fname);
+			 System.out.println("Um novo produtor(" + this.getName() + ") nasceu, com este inventário: " + fname);
 		 } catch (Exception e) {
 			 fs = null;
 			 System.err.println("Cannot open "+fname);

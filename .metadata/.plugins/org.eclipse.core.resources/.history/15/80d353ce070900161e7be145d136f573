@@ -1,0 +1,25 @@
+package ex6Consumer;
+import java.io.FileInputStream;
+
+public class Marketplace {
+	
+	 public static void main(String args[]) {
+		 Buffer b = new Buffer();
+		 Writer w1 = new Writer("entrada.txt",b);
+		 Writer w2 = new Writer("entrada2.txt",b);
+		 Reader r1 = new Reader(b);
+		 Reader r2 = new Reader(b);
+		 Reader r3 = new Reader(b);
+		 
+		 System.out.println("w1");
+		 w1.run();
+		 System.out.println("r1");
+		 r1.run();
+		 System.out.println("r2");
+		 r2.run();
+		 System.out.println("w2");
+		 w2.run();
+		 r3.run();
+	 }
+
+}

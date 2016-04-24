@@ -1,0 +1,17 @@
+package ex6Consumer;
+
+class Reader extends Thread {
+	Buffer b;
+	public void run() {
+		 char x;
+		 System.out.println("Um consumidor("+this.getName()+") pegou um produto.");
+		 while ((x = b.get()) != ' ')
+			 System.out.print(x);
+		 System.out.print("\n");
+	}
+	 
+	Reader(Buffer b) {
+		this.b = b;
+		System.out.println("Um novo consumidor(" + this.getName() + ") nasceu.");
+	}
+} 

@@ -1,0 +1,4 @@
+package ex6Consumer;
+
+import java.io.FileInputStream;
+
