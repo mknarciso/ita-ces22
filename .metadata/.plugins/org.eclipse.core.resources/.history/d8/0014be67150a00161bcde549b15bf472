@@ -16,13 +16,16 @@ class CalculatorInput{
 			
 			//System.out.print("[" + engine.display() + "]");
 			//String m = stream.readLine();
-			System.out.println(op);
-			if (op.length() == 0) {
+			//System.out.println(m);
+			if (op==null) {
 				System.out.println("Empty op");
 				return engine.display();
+				
 				}
 			while (op.length() > 0){
+				System.out.println(op.length());
 				char c = op.charAt(0);
+				System.out.println(op.charAt(0));
 				if (c == '+') engine.add();
 				else if (c == '-') engine.subtract();
 				else if (c == '*') engine.multiply();

@@ -16,11 +16,8 @@ class CalculatorInput{
 			
 			//System.out.print("[" + engine.display() + "]");
 			//String m = stream.readLine();
-			System.out.println(op);
-			if (op.length() == 0) {
-				System.out.println("Empty op");
-				return engine.display();
-				}
+			//System.out.println(m);
+			if (op==null) return engine.display();
 			while (op.length() > 0){
 				char c = op.charAt(0);
 				if (c == '+') engine.add();
@@ -32,7 +29,7 @@ class CalculatorInput{
 				else if (c == 'c' || c == 'C') engine.clear();
 				else throw new Exception("Unknow operation!");
 				op = op.substring(1);
-				System.out.println("Next op: "+op);
+				System.out.println(op);
 			}
 		}
 	}

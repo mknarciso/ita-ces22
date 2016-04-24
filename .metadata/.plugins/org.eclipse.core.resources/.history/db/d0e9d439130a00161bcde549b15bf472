@@ -11,18 +11,15 @@ class CalculatorInput{
 		engine = e;
 	}
 	
-	int run(String op) throws Exception {
-		for(;;){
+	int run(String operation) throws Exception {
+		//for(;;){
 			
 			//System.out.print("[" + engine.display() + "]");
 			//String m = stream.readLine();
-			System.out.println(op);
-			if (op.length() == 0) {
-				System.out.println("Empty op");
-				return engine.display();
-				}
-			while (op.length() > 0){
-				char c = op.charAt(0);
+			//System.out.println(m);
+			if (m==null) break;
+			while (m.length() > 0){
+				char c = m.charAt(0);
 				if (c == '+') engine.add();
 				else if (c == '-') engine.subtract();
 				else if (c == '*') engine.multiply();
@@ -31,21 +28,21 @@ class CalculatorInput{
 				else if (c == '=') engine.compute();
 				else if (c == 'c' || c == 'C') engine.clear();
 				else throw new Exception("Unknow operation!");
-				op = op.substring(1);
-				System.out.println("Next op: "+op);
+				m = m.substring(1);
+				System.out.println(m);
 			}
-		}
+		//}
 	}
 	public static void main(String []args) throws Exception{
-		//try {
-		//CalculatorEngine e = new CalculatorEngine();
-		//CalculatorInput x = new CalculatorInput(e);
+		try {
+		CalculatorEngine e = new CalculatorEngine();
+		CalculatorInput x = new CalculatorInput(e);
 		//x.run();
 		new Calc();
-		//}catch (Exception e) 
-		//{
-		//	System.out.println(e.getMessage()); 
-		//} 
-		//System.out.println("Please restart the program");
+		}catch (Exception e) 
+		{
+			System.out.println(e.getMessage()); 
+		} 
+		System.out.println("Please restart the program");
 	}
 }
