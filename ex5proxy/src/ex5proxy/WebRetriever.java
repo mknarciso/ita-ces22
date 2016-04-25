@@ -32,11 +32,17 @@ class WebRetriever {
 		 }
 	 }
 	 String getResponseString(){
-		 String result = "";
+		 //int[] result;
 		 int c;
+		 //int i=0;
+		 String result = "";
 		 try{
-			 while ((c = is.read()) != -1)
-				 result += c;
+			 while ((c = is.read()) != -1){
+				 //result[i] = c;
+				 //i++;
+				 System.out.print((char) c);
+				 result += (char)c;
+			 }
 		 } catch (IOException e){
 			 System.err.println("IOException in reading from " + "Web server");
 		 }
@@ -52,7 +58,7 @@ class WebRetriever {
 		 }
 	 }
 	 
-	 public static void main(String[] args) {
+	 /*public static void main(String[] args) {
 		 try {
 			 WebRetriever w = new WebRetriever("www.nus.edu.sg", 80);
 			 w.request("/NUSinfo/UG/ug.html");
@@ -63,5 +69,5 @@ class WebRetriever {
 		 } catch (IOException i) {
 			 System.err.println("IOException in connecting to Host");
 		 }
-	 }
+	 }*/
 }

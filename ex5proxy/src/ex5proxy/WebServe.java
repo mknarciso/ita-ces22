@@ -16,7 +16,7 @@ class WebServe implements Runnable {
 			 while ((message = is.readLine()) != null) {
 				 if (message.equals(""))
 					 break; // end of command block
-				 System.out.println(message);
+				 //System.out.println(message);
 				 StringTokenizer t = new StringTokenizer(message);
 				 String token = t.nextToken(); // get first token
 				 if (token.equals("GET")) // if token is ”GET”
@@ -31,7 +31,7 @@ class WebServe implements Runnable {
 	 
 	 void returnResponse() {
 		 //int c;
-		 String address="", request="";
+		 String address="", request="/";
 		 boolean emptyRequest = true;
 		 try {
 			 char[] res = resource.toCharArray();
@@ -39,7 +39,7 @@ class WebServe implements Runnable {
 				 if(emptyRequest){
 					 if(res[i]=='/'){
 						 emptyRequest=false;
-						 request += res[i];
+						 //request += res[i];
 					 }
 					 else
 						 address += res[i];
@@ -48,15 +48,18 @@ class WebServe implements Runnable {
 					 request += res[i];
 				 }
 			 }
+			 System.out.println(address);
+			 System.out.println(request);
 			 WebRetriever w = new WebRetriever(address, 80);
 			 w.request(request);
-			 char[] write = w.getResponseString().toCharArray();
+			 //char[] write = w.getResponseString().toCharArray();
+			 byte[] write_b = w.getResponseString().getBytes();
 			 //byte[] bytes = toBytes(write);
-			 System.out.print(w.getResponseString());
-			 for(int i=0;i<write.length;i++){
-				 os.write((byte) (write[i] & 0xFF));
-				 
-			 }
+			 System.out.print(w.getResponseString().length());
+			 os.write(write_b);
+			 /*for(int i=0;i<write.length;iss++){
+				 os.write((byte) (write[i] & 0xFF));	 
+			 }*/
 			 //os.write(w.getResponseString());
 			 w.close();
 
