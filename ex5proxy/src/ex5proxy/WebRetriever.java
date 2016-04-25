@@ -12,39 +12,20 @@ class WebRetriever {
 		 is = soc.getInputStream();
 	 }
 	 
-	 void request(String path) {
-		 try {
-			 String message = "GET " + path + "\n\n";
-			 os.write(message.getBytes());
-			 os.flush();
-			 //int c;
-			 //System.out.println("REQUEST: ");
-			 //while ((c = is.read()) != -1)
-			//	 System.out.print((char) c);
-		 } catch (IOException e) {
-			 System.err.println("Error in HTTP request");
-		 }
+	 void request(String path, String host) {
+		PrintWriter outw = new PrintWriter(os, false);
+		outw.print("GET " + path + " HTTP/1.1\r\n");
+		outw.print("Host: " + host + ":8080\r\n");
+		outw.print("Accept: */*\r\n Accept-Encoding: gzip, deflate\r\n User-Agent: runscope/0.1\r\n\r\n");
+		outw.flush();
 	 }
-	 
-	 void getResponse() {
-		 int c;
-		 try {
-			 while ((c = is.read()) != -1)
-				 System.out.print((char) c) ;
-		 } catch (IOException e) {
-			 System.err.println("IOException in reading from " + "Web server");
-		 }
-	 }
+
 	 String getResponseString(){
-		 //int[] result;
 		 int c;
-		 //int i=0;
 		 String result = "";
 		 System.out.println("GET RESPONSE STRING:");
 		 try{
 			 while ((c = is.read()) != -1){
-				 //result[i] = c;
-				 //i++;
 				 System.out.print((char) c);
 				 result += (char)c;
 			 }
@@ -62,17 +43,5 @@ class WebRetriever {
 			 System.err.println("IOException in closing connection");
 		 }
 	 }
-	 
-	/* public static void main(String[] args) {
-		 try {
-			 WebRetriever w = new WebRetriever("www.uol.com.br", 80);
-			 w.request("/");
-			 w.getResponse();
-			 w.close();
-		 } catch (UnknownHostException h) {
-			 System.err.println("Hostname Unknown");
-		 } catch (IOException i) {
-			 System.err.println("IOException in connecting to Host");
-		 }
-	 }*/
+
 }
