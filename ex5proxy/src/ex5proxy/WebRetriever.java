@@ -31,6 +31,18 @@ class WebRetriever {
 			 System.err.println("IOException in reading from " + "Web server");
 		 }
 	 }
+	 String getResponseString(){
+		 String result = "";
+		 int c;
+		 try{
+			 while ((c = is.read()) != -1)
+				 result += c;
+		 } catch (IOException e){
+			 System.err.println("IOException in reading from " + "Web server");
+		 }
+		 return result;
+	 }
+	 
 	 
 	 public void close() {
 		 try {
