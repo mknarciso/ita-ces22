@@ -17,6 +17,10 @@ class WebRetriever {
 			 String message = "GET " + path + "\n\n";
 			 os.write(message.getBytes());
 			 os.flush();
+			 //int c;
+			 //System.out.println("REQUEST: ");
+			 //while ((c = is.read()) != -1)
+			//	 System.out.print((char) c);
 		 } catch (IOException e) {
 			 System.err.println("Error in HTTP request");
 		 }
@@ -36,6 +40,7 @@ class WebRetriever {
 		 int c;
 		 //int i=0;
 		 String result = "";
+		 System.out.println("GET RESPONSE STRING:");
 		 try{
 			 while ((c = is.read()) != -1){
 				 //result[i] = c;
@@ -58,10 +63,10 @@ class WebRetriever {
 		 }
 	 }
 	 
-	 /*public static void main(String[] args) {
+	/* public static void main(String[] args) {
 		 try {
-			 WebRetriever w = new WebRetriever("www.nus.edu.sg", 80);
-			 w.request("/NUSinfo/UG/ug.html");
+			 WebRetriever w = new WebRetriever("www.uol.com.br", 80);
+			 w.request("/");
 			 w.getResponse();
 			 w.close();
 		 } catch (UnknownHostException h) {
