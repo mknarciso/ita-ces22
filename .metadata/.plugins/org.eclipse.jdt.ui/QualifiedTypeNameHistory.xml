@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="ex6Consumer.Marketplace.Buffer"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
 </qualifiedTypeNameHistroy>

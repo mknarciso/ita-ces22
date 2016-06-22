@@ -2,22 +2,25 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="System" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="Operadora" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Claro"/>
+			<item value="StockOffer"/>
+			<item value="colleague"/>
 			<item value="System"/>
 			<item value="len"/>
 			<item value="lenght"/>
 			<item value="in reading in Web"/>
 			<item value=".8,en-US;q=0.6,en;q=0.4"/>
-			<item value="IOException in reading in Web server"/>
-			<item value="resource"/>
-			<item value="display"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Operadora"/>
+			<item value="Sms"/>
+			<item value="user"/>
 			<item value="Buffers"/>
 		</list>
 	</section>
