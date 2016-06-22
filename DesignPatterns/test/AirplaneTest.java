@@ -1,30 +1,30 @@
-/* Useful for teste, while not abstract
- * 
- * 
- * import static org.junit.Assert.*;
-
+import static org.junit.Assert.*;
+import java.util.Scanner;
 import org.junit.Test;
 
 public class AirplaneTest {
-
 	@Test
-	public void testGetBrand() {
-		Airplane p100 = new Airplane();
-		p100.setBrand("Embraer");
-		p100.getBrand();
-		assertEquals(p100.getBrand(),"Embraer");
-	}
+	public void testE190() {
+		
+		//Static test
+		Embraer Factory0 = new Embraer();
+		Airplane firstPlane = null;
+		firstPlane = Factory0.makeAirplane("E190");
+		firstPlane.airplaneIntro();
+		assertEquals(190,firstPlane.getModel());
+		assertEquals(95,firstPlane.getSeats());
 
+	}
 	@Test
-	public void testAirplaneIntro() {
-		Airplane p100 = new Airplane();
-		p100.setBrand("Embraer");
-		p100.setName("Phenom");
-		p100.setModel(100);
-		p100.setSeats(8);
-		p100.setMaxSpeed(400);
-		p100.airplaneIntro();
-		assertEquals(p100.getAirplaneIntro(),"This is the new Embraer Phenom 100, it flies at maximum 400.0 knots, and takes 8 passengers!");
-	}
+	public void testP200() {
+		
+		//Static test
+		Embraer Factory0 = new Embraer();
+		Airplane firstPlane = null;
+		firstPlane = Factory0.makeAirplane("P200");
+		firstPlane.airplaneIntro();
+		assertEquals("Phenom",firstPlane.getName());
+		assertEquals(12,firstPlane.getSeats());
 
-}*/
+	}
+}
